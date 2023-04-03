@@ -33,6 +33,8 @@ struct
 
 } typedef compu;
 void mostrarDatos(compu *computadoras);
+void pcMasVIeja(compu *computadoras);
+void mayorVelocidad(compu *computadoras);
 
 int main()
 {
@@ -61,7 +63,7 @@ int main()
     int j = 0;
     char cadena[10];
     printf("*******************\n INICIO APARTADO 4-b: \n");
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("\n Ingrese los datos de la computadora numero %d \n", i + 1);
         printf("ingrese el anio de fabricacion \n");
@@ -82,6 +84,8 @@ int main()
 
     }
     mostrarDatos(computadoras);
+    pcMasVIeja(computadoras);
+    mayorVelocidad(computadoras);
  
 
     return 0;
@@ -91,7 +95,7 @@ void mostrarDatos(compu *computadoras)
 {
     printf("*********************INGRESANDO A MOSTRAR LISTA DE COMPUTADORAS ***************\n********************************* \n");
   
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("computadora nro %d \n", i + 1);
         printf("El anio de fabricion %d \n",  computadoras[i].anio );
@@ -101,4 +105,50 @@ void mostrarDatos(compu *computadoras)
      
     }
     printf("\n ************FIN DE MOSTRAR LISTA ************* \n");
+}
+
+void pcMasVIeja(compu *computadoras)
+{
+        printf("*********************INGRESANDO A MOSTRAR PC MAS VIEJA ***************\n********************************* \n");
+
+    int vieja = 2024;
+    int indice = 6;
+    for (int i = 0; i < 5; i++)
+    {
+        if (computadoras[i].anio < vieja)
+        {
+            vieja = computadoras[i].anio;
+            indice = i;
+        }
+    }
+    printf("Las caractericas de la computadora mas vieja son : \n ");
+    printf("El anio de fabricion %d \n",  computadoras[indice].anio);
+    printf("La velocidad de procesamiento  es de %d GHz. \n", computadoras[indice].velocidad);
+    printf("Tiene %d nucleos. \n", computadoras[indice].cantidad);
+    printf("El tipo de procesador es %s. \n", computadoras[indice].tipo_cpu);
+        printf("\n ************FIN DE PC MAS VIEJA ************* \n");
+
+}
+
+void mayorVelocidad(compu *computadoras){
+     int veloz = 0;
+    int indice = 6;
+            printf("*********************INGRESANDO A MOSTRAR PC MAS VELOZ ***************\n********************************* \n");
+
+    for (int i = 0; i < 5; i++)
+    {
+        if (computadoras[i].velocidad > veloz)
+        {
+            veloz = computadoras[i].velocidad;
+            indice = i;
+        }
+    }
+    printf("las caractericas de la computadora mas veloz son : \n ");
+    printf("El anio de fabricion %d \n",  computadoras[indice].anio);
+    printf("La velocidad de procesamiento  es de %d GHz. \n", computadoras[indice].velocidad);
+    printf("Tiene %d nucleos. \n", computadoras[indice].cantidad);
+    printf("El tipo de procesador es %s. \n", computadoras[indice].tipo_cpu);
+            printf("\n ************FIN DE PC MAS VIEJA ************* \n");
+
+
 }
