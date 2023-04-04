@@ -1,0 +1,6 @@
+2f) el archivo tp2_1_2.c no se puede ver porque pertenece a la rama opcion 2 
+y la rama main lo desconoce.
+Al crear el archivo respuestas.txt y hacer el commit, se observa que este se añadio a la rama main 
+pero en la Rama opcion_2 no se muestra ningun cambio. 
+Al realizar el merge se puede en la interfaz grafica de gitk --all se puede observar como 
+las ramas se unen, y ahora los archivos de la rama opcion_2 son visibles desde la rama main.
